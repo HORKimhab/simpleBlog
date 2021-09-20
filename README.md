@@ -1,4 +1,4 @@
-# simpleBlog
+# simpleBlog - codeigniter
 
 ## Build A CodeIgniter PHP App
 
