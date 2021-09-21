@@ -9,6 +9,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <!-- Customise CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
 </head>
 
 <body>
@@ -28,10 +30,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>/about">About</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="<?php echo base_url(); ?>posts">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>

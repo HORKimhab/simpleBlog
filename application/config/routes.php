@@ -52,6 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 // $route['default_controller'] = 'welcome';
 
 /* Posts */
+$route["posts/(:any)"] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
 
 /* Pages */
