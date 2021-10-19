@@ -17,8 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand" href="/">SimpleBlog</a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
-                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -39,8 +38,7 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
@@ -48,6 +46,11 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
                         </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto my-2">
+                    <li class="nav-item">
+                        <a class="nav-link" title="Create Post" href="<?php echo base_url(); ?>posts/create">Create</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">

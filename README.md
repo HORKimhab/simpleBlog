@@ -11,6 +11,6 @@ https://www.youtube.com/watch?v=I752ofYu7ag&list=PLillGF-RfqbaP_71rOyChhjeK1swok
 
 Start here: https://youtu.be/I752ofYu7ag?list=PLillGF-RfqbaP_71rOyChhjeK1swokUIS
 
-https://youtu.be/I752ofYu7ag?list=PLillGF-RfqbaP_71rOyChhjeK1swokUIS&t=1349
+https://youtu.be/jOKTjE6Q5QQ?list=PLillGF-RfqbaP_71rOyChhjeK1swokUIS&t=984
 
 
