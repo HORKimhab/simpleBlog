@@ -50,4 +50,53 @@ class Posts extends CI_Controller {
         $this->post_model->delete_post($id);
         redirect('posts');
     }
+
+    // Function Edit 
+    public function edit($slug) {
+        $data['post'] = $this->post_model->get_posts($slug);
+
+        if (empty($data['post'])) {
+            show_404();
+        }
+
+        $data['title'] = 'Edit Post';
+
+        $this->load->view('templates/header');
+        $this->load->view('posts/edit', $data);
+        $this->load->view('templates/footer');
+    }
+
+    // Function update post 
+    public function update() {
+
+        // $id = $this->input->post('id');
+        // $data_array = array(
+        //     'id' => $id
+        // );
+        // // var_dump($id);
+        // // die();
+
+        // $result = $this->db->get_where('posts', $data_array)->row_array();
+        // $slug = $result['slug'];
+        // $data['post'] = $this->post_model->get_posts($slug);
+        // // var_dump($result['title']);
+        // // die();
+
+        // var_dump($data);
+        // die();
+        // $this->form_validation->set_rules('title', 'Title', 'required');
+        // $this->form_validation->set_rules('body', 'Body', 'trim|required|min_length[10]');
+
+        // if ($this->form_validation->run() === FALSE) {
+        //     $this->load->view('templates/header');
+        //     $this->load->view('posts/edit', $data);
+        //     $this->load->view('templates/footer');
+        // } else {
+        //     $this->post_model->update_post();
+        //     redirect('posts');
+        // }
+
+        $this->post_model->update_post();
+        redirect('posts');
+    }
 }

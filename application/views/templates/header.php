@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
     <!-- Customise CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
+    <!-- CKEdtor4 -->
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 </head>
 
 <body>

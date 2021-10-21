@@ -38,4 +38,20 @@ class Post_model extends CI_Model {
         $this->db->update('posts', $data_array);
         return true;
     }
+
+    // Update post model 
+    public function update_post() {
+        $slug = url_title($this->input->post('title'));
+
+        $data = [
+            'title' => $this->input->post('title'),
+            'slug' => $slug,
+            'body' => $this->input->post('body'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ];
+        $id = $this->input->post('id');
+        $this->db->where('id', $id);
+        $query = $this->db->update('posts', $data);
+        return $query;
+    }
 }
