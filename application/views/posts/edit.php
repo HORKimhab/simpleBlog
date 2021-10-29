@@ -13,13 +13,19 @@
     <label for="exampleFormControlBody">Body</label>
     <textarea class="form-control" name="body" id="body1" rows="3" placeholder="Add Body"><?php echo $post['body']; ?></textarea>
 </div>
+
+<div class="form-group">
+    <label for="category">Category</label>
+    <select class="form-control" id="category" name="category_id">
+        <?php foreach ($categories as $category) : ?>
+            <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
 <!-- <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
 <button type="submit" class="btn btn-primary">Update</button>
 </form>
-<script>
-    /* CKEditor */
-    CKEDITOR.replace('body1');
-</script>

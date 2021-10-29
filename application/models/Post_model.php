@@ -8,7 +8,8 @@ class Post_model extends CI_Model {
     public function get_posts($slug = FALSE) {
         if ($slug === FALSE) {
             // View All Posts 
-            $this->db->order_by('id', 'DESC');
+            $this->db->order_by('posts.id', 'DESC');
+            $this->db->join('categories', 'categories.id = posts.category_id');
             $query = $this->db->get_where('posts', array('status' => 0));
             return $query->result_array();
         }
@@ -18,14 +19,16 @@ class Post_model extends CI_Model {
         return $query->row_array();
     }
 
-    public function create_post() {
+    public function create_post($post_image) {
         $slug = url_title($this->input->post('title'));
         /* url_title:  https://codeigniter.com/userguide3/helpers/url_helper.html?highlight=url_title#url_title */
 
         $data = [
             'title' => $this->input->post('title'),
+            'category_id' => $this->input->post('category_id'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
+            'post_image' => $post_image,
         ];
 
         return $this->db->insert('posts', $data);
@@ -45,6 +48,7 @@ class Post_model extends CI_Model {
 
         $data = [
             'title' => $this->input->post('title'),
+            'category_id' => $this->input->post('category_id'),
             'slug' => $slug,
             'body' => $this->input->post('body'),
             'updated_at' => date('Y-m-d H:i:s'),
@@ -53,5 +57,12 @@ class Post_model extends CI_Model {
         $this->db->where('id', $id);
         $query = $this->db->update('posts', $data);
         return $query;
+    }
+
+    // Get all categories
+    public function get_categories() {
+        $this->db->order_by('name');
+        $query = $this->db->get('categories');
+        return $query->result_array();
     }
 }

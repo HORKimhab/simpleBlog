@@ -31,6 +31,9 @@ class Posts extends CI_Controller {
     public function create() {
         $data['title'] = 'Create Post';
 
+        // Get categories 
+        $data['categories'] = $this->post_model->get_categories();
+
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('body', 'Body', 'trim|required|min_length[10]');
 
@@ -39,7 +42,25 @@ class Posts extends CI_Controller {
             $this->load->view('posts/create', $data);
             $this->load->view('templates/footer');
         } else {
-            $this->post_model->create_post();
+            // Upload Image 
+            $config['upload_path'] = './assets/images/posts';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['upload_size'] = '2048';
+            $config['max_width'] = '1080';
+            $config['max_height'] = '1080';
+
+            // Load library 
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload()) {
+                $errors = array('error' => $this->upload->display_errors());
+                $post_image = 'nomiage.jpg';
+            } else {
+                // Insert name image to db 
+                $data = array('upload_data' => $this->upload->data());
+                $post_image = $_FILES['userfile']['name'];
+            }
+
+            $this->post_model->create_post($post_image);
             // $this->load->view('posts/sucess');
             redirect('posts');
         }
@@ -54,6 +75,9 @@ class Posts extends CI_Controller {
     // Function Edit 
     public function edit($slug) {
         $data['post'] = $this->post_model->get_posts($slug);
+
+        // Get categories 
+        $data['categories'] = $this->post_model->get_categories();
 
         if (empty($data['post'])) {
             show_404();
@@ -95,6 +119,9 @@ class Posts extends CI_Controller {
         //     $this->post_model->update_post();
         //     redirect('posts');
         // }
+
+        // Get categories 
+        $data['categories'] = $this->post_model->get_categories();
 
         $this->post_model->update_post();
         redirect('posts');
