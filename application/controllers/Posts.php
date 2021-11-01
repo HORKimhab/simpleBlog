@@ -53,7 +53,7 @@ class Posts extends CI_Controller {
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload()) {
                 $errors = array('error' => $this->upload->display_errors());
-                $post_image = 'nomiage.jpg';
+                $post_image = 'nomiage.png';
             } else {
                 // Insert name image to db 
                 $data = array('upload_data' => $this->upload->data());
