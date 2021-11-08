@@ -60,12 +60,15 @@ $route['posts'] = 'posts/index';
 
 /* Pages */
 $route['default_controller'] = 'pages/view';
+
+/* Create Categories */
+$route['categories'] = 'categories/index';
+$route['categories/create'] = 'categories/create';
+$route["categories/posts/(:any)"] = 'categories/posts/$1';
+
 /* 
 http://localhost:8052/Codeingter/simpleBlog-Codeigniter/pages/view/about ---> http://localhost:8052/Codeingter/simpleBlog-Codeigniter/about
 */
 $route["(:any)"] = 'pages/view/$1';
-
-
-
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

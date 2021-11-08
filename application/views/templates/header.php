@@ -37,6 +37,9 @@
                         <a class="nav-link" href="<?php echo base_url(); ?>posts">Blog</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -52,7 +55,10 @@
                 </ul>
                 <ul class="navbar-nav ml-auto my-2">
                     <li class="nav-item">
-                        <a class="nav-link" title="Create Post" href="<?php echo base_url(); ?>posts/create">Create</a>
+                        <a class="nav-link" title="Create Post" href="<?php echo base_url(); ?>posts/create">Create Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" title="Create Category" href="<?php echo base_url(); ?>categories/create">Create Category</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
