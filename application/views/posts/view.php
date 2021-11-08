@@ -12,3 +12,22 @@
 <?php echo form_open('/posts/delete/' . $post['id']); ?>
 <input type="submit" value="Delete" class="btn btn-danger mx-1" />
 </form>
+<hr>
+<?php echo form_open('comments/create/' . $post['id']); ?>
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="name">Body</label>
+    <textarea name="name" id="body" cols="30" rows="10" class="form-control"></textarea>
+</div>
+<input type="hidden" name="slug" value="<?php echo $post['slug']; ?>">
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>
